@@ -4,9 +4,9 @@ services:
   php-env:
     build: .
     volumes:
-      - ./sms:/var/www/html
+      - ./manajemen:/var/www/html
     ports:
-      - 8070:80
+      - 8383:80
     depends_on:
       - mysql
   
@@ -15,18 +15,18 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_DATABASE: pool
-      MYSQL_USER: user
+      MYSQL_DATABASE: ccmsdb
+      MYSQL_USER: root
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./sms:/docker-entrypoint-initdb.d
+      - ./manajemen:/docker-entrypoint-initdb.d
 
   phpmyadmin:
     image: phpmyadmin:latest
     restart: always
     ports:
-      - 8071:80
+      - 8384:80
     environment:
       - PMA_ARBITRARY=1
     depends_on:
