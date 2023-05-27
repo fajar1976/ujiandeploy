@@ -6,7 +6,7 @@ services:
     volumes:
       - ./sms:/var/www/html
     ports:
-      - 8111:80
+      - 8070:80
     depends_on:
       - mysql
   
@@ -26,7 +26,7 @@ services:
     image: phpmyadmin:latest
     restart: always
     ports:
-      - 8112:80
+      - 8071:80
     environment:
       - PMA_ARBITRARY=1
     depends_on:
