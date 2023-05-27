@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2019 at 10:29 AM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.2.19
+-- Generation Time: May 27, 2023 at 09:25 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -36,14 +35,14 @@ CREATE TABLE `tbladmin` (
   `Email` varchar(200) NOT NULL,
   `Password` varchar(120) DEFAULT NULL,
   `AdminRegdate` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbladmin`
 --
 
 INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
-(1, 'Admin', 'admin', 8979555556, 'admin@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2019-08-01 08:53:46');
+(1, 'Admin', 'admin', 8979555556, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '2019-08-01 08:53:46');
 
 -- --------------------------------------------------------
 
@@ -57,7 +56,7 @@ CREATE TABLE `tblcomputers` (
   `ComputerLocation` varchar(120) DEFAULT NULL,
   `IPAdd` varchar(120) DEFAULT NULL,
   `EntryDate` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tblcomputers`
@@ -67,7 +66,7 @@ INSERT INTO `tblcomputers` (`ID`, `ComputerName`, `ComputerLocation`, `IPAdd`, `
 (1, 'Acer', 'Cabin101', '127.0.0.1', '2019-08-01 09:25:58'),
 (2, 'ASUS', 'Cabin102', '127.0.0.2', '2019-08-01 09:26:37'),
 (3, 'DELL', 'Cabin103', '127.0.0.2', '2019-08-01 09:27:04'),
-(4, 'DELL', 'Cabin104', '127.0.0.3', '2019-08-01 09:30:40'),
+(4, 'DULL', 'Cabin104', '127.0.0.3', '2019-08-01 09:30:40'),
 (5, 'Asus Gaming Laptop', 'Cabin 10', '127.0.0.01', '2019-08-03 07:54:52');
 
 -- --------------------------------------------------------
@@ -91,7 +90,7 @@ CREATE TABLE `tblusers` (
   `Remark` varchar(120) DEFAULT NULL,
   `Status` varchar(20) NOT NULL,
   `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tblusers`
